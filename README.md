@@ -1,6 +1,6 @@
 # Hooked Harmony
 
-Hooked Harmony is an e-commerce platform for handcrafted items, designed to provide a seamless shopping experience for buyers and an efficient management system for sellers. The project is built using **HTML, CSS, and JavaScript**.
+Hooked Harmony is an e-commerce web application for handcrafted items. It allows users to browse products, add them to a cart, and manage orders. The project is built using **HTML, CSS, and JavaScript** and demonstrates a complete frontend workflow with dynamic user interactions and local storage management.
 
 ---
 
@@ -12,20 +12,16 @@ Hooked Harmony is an e-commerce platform for handcrafted items, designed to prov
 ---
 
 ## Features
-- Browse handcrafted items with detailed descriptions.
-- Add items to cart and checkout.
-- Store product information locally using Local Storage.
-- User-friendly interface with responsive design.
-- Admin panel (if implemented) for managing products.
+- Browse handcrafted items with detailed descriptions  
+- Add items to the cart and manage orders  
+- Store order information locally using Local Storage  
+- User-friendly interface with responsive design  
 
 ---
 
 ## Technologies Used
-- **Frontend:** HTML, CSS, JavaScript
-- **Storage:** Local Storage
-- Optional enhancements:
-  - Could be extended with Node.js and MongoDB for backend support.
-  - Payment gateway integration for real transactions.
+- **Frontend:** HTML, CSS, JavaScript  
+- **Storage:** Local Storage  
 
 ---
 
