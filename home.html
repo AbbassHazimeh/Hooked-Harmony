@@ -1,99 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShopEase - Your One-Stop Online Shop</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="hero">
-      <h1>Welcome to Hooked Harmony</h1>
-      <p>Your one-stop shop for all original handmade product you need!</p>
-      <button>Shop Now</button>
-    </div>
-    <div class="featured-products">
-      <h2>Featured Products</h2>
-      <div class="product-grid" id="productGrid">
-        <div class="product">
-          <a href="itemdetails.html?id=7">
-            <img src="assets/images/p1.jpg" alt="Product 7" />
-          </a>
-          <div class="product-info">
-            <h3>Keychain</h3>
-            <p>$5.00</p>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - Your One-Stop Online Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="hero">
+    <h1>Welcome to Hooked Harmony</h1>
+    <p>Your one-stop shop for all original handmade product you need!</p>
+    <button><a href="#productGrid">Shop Now</a></button>
+  </div>
+  <div class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="product-grid" id="productGrid" data-category="all">
+      <div class="product" data-category="keychains">
+        <a href="itemdetails.html?id=7">
+          <img src="assets/images/p1.jpg" alt="Product 7" />
+        </a>
+        <div class="product-info">
+          <h3>Keychain</h3>
+          <p>$5.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=8">
-            <img src="assets/images/p2.jpg" alt="Product 8" />
-          </a>
-          <div class="product-info">
-            <h3>Keychain</h3>
-            <p>$5.00</p>
-          </div>
+      </div>
+      <div class="product" data-category="keychains">
+        <a href="itemdetails.html?id=8">
+          <img src="assets/images/p2.jpg" alt="Product 8" />
+        </a>
+        <div class="product-info">
+          <h3>Keychain</h3>
+          <p>$5.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=4">
-            <img src="assets/images/s3.jpg" alt="Product 4" />
-          </a>
-          <div class="product-info">
-            <h3>Homemade Bags</h3>
-            <p>$25.00</p>
-          </div>
+      </div>
+      <div class="product" data-category="keychains">
+        <a href="itemdetails.html?id=9">
+          <img src="assets/images/p3.jpg" alt="Product 9" />
+        </a>
+        <div class="product-info">
+          <h3>Keychain</h3>
+          <p>$5.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=5">
-            <img src="assets/images/s4.jpg" alt="Product 5" />
-          </a>
-          <div class="product-info">
-            <h3>Homemade Bags</h3>
-            <p>$25.00</p>
-          </div>
+      </div>
+
+      <div class="product" data-category="sacks">
+        <a href="itemdetails.html?id=10">
+          <img src="assets/images/g1.jpg" alt="Product 10" />
+        </a>
+        <div class="product-info">
+          <h3>Sacks</h3>
+          <p>$8.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=6">
-            <img src="assets/images/s5.jpg" alt="Product 6" />
-          </a>
-          <div class="product-info">
-            <h3>Homemade Bags</h3>
-            <p>$25.00</p>
-          </div>
+      </div>
+      <div class="product" data-category="sacks">
+        <a href="itemdetails.html?id=11">
+          <img src="assets/images/g2.jpg" alt="Product 11" />
+        </a>
+        <div class="product-info">
+          <h3>Sacks</h3>
+          <p>$8.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=1"
-            ><img src="assets/images/t1.jpg" alt="Product 1"
-          /></a>
-          <div class="product-info">
-            <h3>Teddy Bear</h3>
-            <p>$12.00</p>
-          </div>
+      </div>
+
+      <div class="product" data-category="sacks">
+        <a href="itemdetails.html?id=12">
+          <img src="assets/images/g3.jpg" alt="Product 12" />
+        </a>
+        <div class="product-info">
+          <h3>Sacks</h3>
+          <p>$8.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=2">
-            <img src="assets/images/t2.jpg" alt="Product 2"
-          /></a>
-          <div class="product-info">
-            <h3>Teddy Bear</h3>
-            <p>$12.00</p>
-          </div>
+      </div>
+
+      <div class="product" data-category="bags">
+        <a href="itemdetails.html?id=4">
+          <img src="assets/images/s3.jpg" alt="Product 4" />
+        </a>
+        <div class="product-info">
+          <h3>Homemade Bags</h3>
+          <p>$25.00</p>
         </div>
-        <div class="product">
-          <a href="itemdetails.html?id=3">
-            <img src="assets/images/t3.jpg" alt="Product 3" />
-          </a>
-          <div class="product-info">
-            <h3>Teddy Bear</h3>
-            <p>$12.00</p>
-          </div>
+      </div>
+      <div class="product" data-category="bags">
+        <a href="itemdetails.html?id=5">
+          <img src="assets/images/s4.jpg" alt="Product 5" />
+        </a>
+        <div class="product-info">
+          <h3>Homemade Bags</h3>
+          <p>$25.00</p>
+        </div>
+      </div>
+      <div class="product" data-category="bags">
+        <a href="itemdetails.html?id=6">
+          <img src="assets/images/s5.jpg" alt="Product 6" />
+        </a>
+        <div class="product-info">
+          <h3>Homemade Bags</h3>
+          <p>$25.00</p>
+        </div>
+      </div>
+      <div class="product" data-category="teddy">
+        <a href="itemdetails.html?id=1"><img src="assets/images/t1.jpg" alt="Product 1" /></a>
+        <div class="product-info">
+          <h3>Teddy Bear</h3>
+          <p>$12.00</p>
+        </div>
+      </div>
+      <div class="product" data-category="teddy">
+        <a href="itemdetails.html?id=2">
+          <img src="assets/images/t2.jpg" alt="Product 2" /></a>
+        <div class="product-info">
+          <h3>Teddy Bear</h3>
+          <p>$12.00</p>
+        </div>
+      </div>
+      <div class="product" data-category="teddy">
+        <a href="itemdetails.html?id=3">
+          <img src="assets/images/t3.jpg" alt="Product 3" />
+        </a>
+        <div class="product-info">
+          <h3>Teddy Bear</h3>
+          <p>$12.00</p>
         </div>
       </div>
     </div>
-    <div class="promo-banner">
-      <h2>Special Offer: buy 2 and get the third for free</h2>
+  </div>
+  <div class="promo-banner">
+    <h2>Special Offer: buy 2 and get the third for free</h2>
+  </div>
+
+  <div class="for-you">Recommendation For You !</div>
+  <div id="recommendationGrid">
+    
+    <!-- Recommendation 1 -->
+    <div class="product-recommended-1">
+        <a href="itemdetails.html?id=1">
+            <img src="assets/images/t1.jpg" alt="Teddy Bear" />
+        </a>
+        <div class="recommended-product-info">
+            <h3>Teddy Bear</h3>
+            <p>Meet your new favorite cuddle buddy! Our Cuddly Brown Teddy Bear is the perfect companion for both children and adults alike.</p>
+            <p>$12.00</p>
+        </div>
     </div>
-    <div class="footer">
-      <p>&copy; 2024 Hooked Harmony. All Rights Reserved.</p>
+
+    <!-- Recommendation 2 -->
+    <div class="product-recommended-2">
+        <a href="itemdetails.html?id=4">
+            <img src="assets/images/s3.jpg" alt="Homemade Bags" />
+        </a>
+        <div class="recommended-product-info">
+            <h3>Homemade Bags</h3>
+            <p>Handcrafted bags made from sustainable materials, perfect for daily use and special occasions.</p>
+            <p>$25.00</p>
+        </div>
     </div>
-  </body>
+
+    <!-- Recommendation 3 -->
+    <div class="product-recommended-3">
+        <a href="itemdetails.html?id=7">
+            <img src="assets/images/p1.jpg" alt="Keychain" />
+        </a>
+        <div class="recommended-product-info">
+            <h3>Keychain</h3>
+            <p>Unique, handmade keychains that add personality to your keys. Made from durable materials.</p>
+            <p>$5.00</p>
+        </div>
+    </div>
+</div>
+
+
+  <div class="footer">
+    <p>&copy; 2024 Hooked Harmony. All Rights Reserved.</p>
+  </div>
+
+  <script>
+    </script>
+    
+</body>
+
 </html>

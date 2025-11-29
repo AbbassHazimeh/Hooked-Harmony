@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Arial', sans-serif;
     background-color: #FFFFFF;
@@ -5,6 +10,126 @@ body {
     padding: 0;
     color: #333;
 }
+
+:root {
+    --theme-bg-color: white;
+    --theme-color: rgb(37, 150, 190);
+  }
+
+.item {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--theme-color);
+  }
+  
+  .item.right {
+    margin: 0 0 0 auto;
+  }
+  .navbar .logo {
+    padding-left: 10px;
+
+  }
+  
+  .logo img {
+    max-width: 15vw;
+  }
+  .item .group {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+  }
+  .item .group:hover{
+    color: #FF8343;
+  }
+  .item .group .sub {
+    font-size: 0.8em;
+    
+  }
+  
+  .material-icons {
+    font-size: 1.8rem;
+  }
+
+  .navbar {
+    position: fixed;
+    max-height: 10vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 2px 0 grey;
+    font-size: 1em;
+    background-color: var(--theme-bg-color);
+    color: var(--theme-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 36px;
+    color: white;
+    outline: none;
+    background-color: #FF8343;
+    border-radius: 10px;
+    margin: 0.5em;
+    padding: 0.2em;
+    
+  }
+  .menu-button:hover{
+    background-color: #4158A6;
+  }
+  .dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 60px;
+    left: 10px;
+    background-color: #179bae;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 1em;
+    font-weight: bold;
+    margin: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden; 
+  }
+  .dropdown-menu.show {
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+  }
+  .navbar ul {
+    padding: 0;
+  }
+  
+  .dropdown-menu li {
+    padding: 8px 12px;
+  }
+  
+  .dropdown-menu li a {
+    text-decoration: none;
+    background-color: #FF8343;
+    border-radius: 10px;
+    padding: 0.5em;
+    color: #333;
+    display: block;
+    color: white;
+    text-align: center;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #4158A6;
+  }
 
 .container {
     max-width: 1000px;
@@ -122,43 +247,39 @@ header h1 {
     margin-right: 10px;
 }
 
-/* Styling the country select dropdown */
 #country {
     width: 100%;
-    /* Full width */
     padding: 12px;
-    /* Padding for better click area */
     border: 1px solid #CCC;
-    /* Border color */
     border-radius: 6px;
-    /* Rounded corners */
     background-color: #FFF;
-    /* Background color */
     color: #4158A6;
-    /* Text color */
     font-size: 16px;
-    /* Font size */
     appearance: none;
-    /* Remove default arrow for custom styling */
     background-image: url('data:image/svg+xml;utf8,<svg fill="%234158A6" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    /* Custom dropdown arrow */
     background-repeat: no-repeat;
-    /* Prevent repeating of the arrow */
     background-position: right 10px center;
-    /* Positioning the arrow */
     background-size: 16px;
-    /* Size of the arrow */
     cursor: pointer;
-    /* Change cursor on hover */
 }
 
-/* Hover and focus states */
 #country:hover,
 #country:focus {
     border-color: #179BAE;
-    /* Change border color on hover/focus */
     box-shadow: 0 0 5px rgba(23, 155, 174, 0.5);
-    /* Subtle shadow effect */
     outline: none;
-    /* Remove default outline */
 }
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  

@@ -3,10 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <title>Product Page</title>
     <link rel="stylesheet" href="itemdetails.css" />
   </head>
   <body>
+
+    <div class="navbar">
+      <button class="menu-button" onclick="toggleDropdown()">
+        <i class="material-icons"> menu </i>
+      </button>
+      <ul class="dropdown-menu" id="dropdownMenu">
+        <li><a href="index.html" onclick="loadContent('index.html')">Home</a></li>
+        <li><a href="about.html" onclick="loadContent('about.html')">About</a></li>
+        <li><a href="#" onclick="loadContent('services.html')">Services</a></li>
+        <li><a href="#" onclick="loadContent('contact.html')">Contact</a></li>
+      </ul>
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="logo" />
+      </div>
+      <a href="signIn.html" class="item">
+        <div class="group">
+          <i class="material-icons">account_circle</i>
+          <div class="detail">
+            Account
+            <div class="sub">Sign In</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
     <div class="container">
       <div class="product-info-container">
         <div class="product-image-container">
@@ -73,6 +99,9 @@
       </div>
     </div>
 
+    <div class="footer">
+      <p>&copy; 2024 Hooked Harmony. All Rights Reserved.</p>
+    </div>
     <script src="itemdetails.js"></script>
   </body>
 </html>

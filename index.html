@@ -1,102 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <title>landing page</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <button class="menu-button" onclick="toggleDropdown()">
-        <i class="material-icons"> menu </i>
-      </button>
-      <ul class="dropdown-menu" id="dropdownMenu">
-        <li><a href="#" onclick="loadContent('home.html')">Home</a></li>
-        <li><a href="#" onclick="loadContent('about.html')">About</a></li>
-        <li><a href="#" onclick="loadContent('services.html')">Services</a></li>
-        <li><a href="#" onclick="loadContent('contact.html')">Contact</a></li>
-      </ul>
 
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="logo" />
-      </div>
-      <div class="item search right" tabindex="0">
-        <div class="search-group">
-          <select>
-            <option value="all">All</option>
-            <option value="all">1</option>
-            <option value="all">2</option>
-            <option value="all">3</option>
-            <option value="all">4</option>
-          </select>
-          <input type="text" />
-          <i class="material-icons search-icon"> search </i>
-        </div>
-      </div>
-      <a href="signIn.html" class="item">
-        <div class="group">
-          <i class="material-icons">account_circle</i>
-          <div class="detail">
-            Account
-            <div class="sub">Sign In</div>
-          </div>
-        </div>
-      </a>
-      <a href="#" onclick="loadContent('cart.html')" class="item">
-        <div class="group">
-          <i class="material-icons">shopping_cart</i>
-          <div class="detail">
-            Cart
-            <div class="sub">USD 0.0</div>
-          </div>
-        </div>
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>landing page</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <button class="menu-button" onclick="toggleDropdown()">
+      <i class="material-icons"> menu </i>
+    </button>
+    <ul class="dropdown-menu" id="dropdownMenu">
+      <li><a href="index.html" onclick="loadContent('home.html')">Home</a></li>
+      <li><a href="about.html" onclick="loadContent('about.html')">About</a></li>
+      <li><a href="#" onclick="loadContent('services.html')">Services</a></li>
+      <li><a href="#" onclick="loadContent('contact.html')">Contact</a></li>
+    </ul>
+
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="logo" />
     </div>
-    <div class="content" id="mainContent">
-      <!-- Content from home.html will be loaded here by default -->
+    <div class="item search right" tabindex="0">
+      <div class="search-group">
+        <select onchange="filterCategory(this.value)">
+          <option value="all">All</option>
+          <option value="teddy" >Teady Bears</option>
+          <option value="keychains">Key Chains</option>
+          <option value="bags">HomeMade Bags</option>
+          <option value="sacks">Sacks</option>
+        </select>
+       
+        <input type="text" placeholder="search here..."/>
+        <i class="material-icons search-icon"> search </i>
+      </div>
     </div>
-    <script>
-      function toggleDropdown() {
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        dropdownMenu.style.display =
-          dropdownMenu.style.display === "none" ? "block" : "none";
-      }
+    <a href="signIn.html" class="item">
+      <div class="group">
+        <i class="material-icons">account_circle</i>
+        <div class="detail">
+          Account
+          <div class="sub">Sign In</div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="cart.html" onclick="loadContentcard('cart.html')" class="item">
+      <div class="group">
+        <i class="material-icons">shopping_cart</i>
+        <div class="detail">
+          Cart
+          <div class="sub"></div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="content" id="mainContent">
+  </div>
 
-      // Function to load content dynamically from other HTML files
-      function loadContent(page) {
-        fetch(page)
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("mainContent").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading content:", error));
+  <script src="index.js">
+    
+  </script>
+</body>
 
-        // Hide the dropdown after selection
-        toggleDropdown();
-      }
-
-      // Load home.html by default when the page loads
-      window.onload = function () {
-        loadContent("home.html");
-      };
-
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function (event) {
-        if (
-          !event.target.matches(".menu-button") &&
-          !event.target.matches(".menu-button *")
-        ) {
-          const dropdownMenu = document.getElementById("dropdownMenu");
-          if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
-          }
-        }
-      };
-    </script>
-  </body>
 </html>

@@ -1,62 +1,77 @@
-document.getElementById('place-order-btn').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+document.getElementById('place-order-btn').addEventListener('click', async function () {
+    const fullName = document.getElementById('full-name')?.value.trim() || '';
+    const country = document.getElementById('country')?.value || '';
+    const address = document.getElementById('address')?.value.trim() || '';
+    const city = document.getElementById('city')?.value.trim() || '';
+    const phone = document.getElementById('phone')?.value.trim() || '';
+    const email = document.getElementById('email')?.value.trim() || '';
+    const additionalInfo = document.getElementById('more')?.value.trim() || '';
+    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || '';
 
-    // Get values from the form fields
-    const orderData = {
-        shippingInfo: {
-            fullName: document.getElementById('full-name').value.trim(),
-            country: document.getElementById('country').value,
-            address: document.getElementById('address').value.trim(),
-            city: document.getElementById('city').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            email: document.getElementById('email').value.trim()
-        },
-        additionalInfo: document.getElementById('more').value.trim(),
-        paymentMethod: document.querySelector('input[name="payment"]:checked') ? document.querySelector('input[name="payment"]:checked').id : ''
-    };
-
-    // Validate that all required fields are filled correctly
-    const isShippingInfoValid = Object.values(orderData.shippingInfo).every(field => field !== '');
-    const isPaymentMethodValid = orderData.paymentMethod !== '';
-
-    if (!isShippingInfoValid || !isPaymentMethodValid) {
-        showPopup('order-error-popup'); // Show error popup if validation fails
+   
+    if (!fullName || !country || !address || !city || !phone || !email || !paymentMethod) {
+        showPopup('order-error-popup');
         return;
     }
+    const orderData = {
+        shippingInfo: {
+            fullName,
+            country,
+            address,
+            city,
+            phone,
+            email
+        },
+        additionalInfo,
+        paymentMethod,
+        products: await generateOrderData()
+    };
 
-    // Convert the order data to a JSON string
     const orderDataJson = JSON.stringify(orderData, null, 2);
-
-    // Create a Blob from the JSON string
     const blob = new Blob([orderDataJson], { type: 'application/json' });
-
-    // Create a link element and set its href to the Blob URL
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'orderData.json';
-
-    // Append the link to the body, click it to trigger the download, and remove it afterward
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    showPopup('order-success-popup'); // Show success popup
+    showPopup('order-success-popup');
 });
 
-// Function to show a popup
 function showPopup(popupId) {
     const popup = document.getElementById(popupId);
-    popup.style.display = 'block';
-
-    // Close the popup after 3 seconds
-    setTimeout(() => {
-        popup.style.display = 'none';
-    }, 3000);
+    if (popup) {
+        popup.style.display = 'block';
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 3000);
+    }
 }
 
-// Close the popup when the close button is clicked
-document.querySelectorAll('.close-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        this.parentElement.parentElement.style.display = 'none';
+async function generateOrderData() {
+    return [
+        {
+            id: 1,
+            name: 'Sample Product',
+            quantity: 2,
+            price: 12.00,
+            color: 'blue'
+        }
+    ];
+}
+
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    dropdownMenu.classList.toggle('show');
+  }
+
+  function loadScript(url) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
     });
-});
+}
