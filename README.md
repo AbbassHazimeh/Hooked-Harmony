@@ -8,10 +8,6 @@ Hooked Harmony is an e-commerce platform for handcrafted items, designed to prov
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
